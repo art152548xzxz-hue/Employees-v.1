@@ -27,11 +27,11 @@ h1{font-size:21px;margin:0;font-weight:700;line-height:1.3}.sub{color:var(--mute
 .circs{display:flex;gap:8px}
 .circ{width:42px;height:42px;border-radius:50%;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;position:relative;color:var(--ink)}
 .circ svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.circ b{position:absolute;top:-3px;right:-3px;min-width:18px;height:18px;border-radius:9px;background:var(--red);color:#fff;font-size:11px;line-height:18px;padding:0 4px}
+.circ b.g{background:var(--grn)}.circ b{position:absolute;top:-3px;right:-3px;min-width:18px;height:18px;border-radius:9px;background:var(--red);color:#fff;font-size:11px;line-height:18px;padding:0 4px}
 .tabs{display:flex;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:4px;margin-bottom:14px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
 .tab{flex:1;padding:9px 2px;border-radius:12px;font-weight:600;font-size:12.5px;color:var(--mute)}.tab.on{background:var(--pri);color:var(--bg)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;margin-bottom:14px}
-.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}.ch h2{margin:0;font-size:17px}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px}.ch h2{margin:0;font-size:17px;white-space:nowrap}
 .link{color:var(--pri);font-weight:600;font-size:14px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
 .stat{background:var(--card);border-radius:18px;padding:12px 14px;border:1px solid var(--line)}.stat b{display:block;font-size:22px}.stat span{font-size:12px;color:var(--mute)}
@@ -48,12 +48,14 @@ h1{font-size:21px;margin:0;font-weight:700;line-height:1.3}.sub{color:var(--mute
 .emp b{display:block;font-size:13.5px;line-height:1.2}.emp small{font-size:11.5px;color:var(--mute)}
 .cell{min-height:56px;border-radius:12px;background:var(--bg);display:flex}.cell.x{background:repeating-linear-gradient(45deg,var(--gray),var(--gray) 6px,var(--bg) 6px,var(--bg) 12px)}
 .cell .add{width:100%;color:var(--mute);font-size:18px;opacity:.6;border-radius:12px;border:1.5px dashed var(--line)}
-.shift{width:100%;border-radius:12px;padding:6px 8px;text-align:left;border-left:4px solid var(--pri);background:var(--pri-s);font-size:12px}.shift b{display:block;font-size:12.5px}.shift span{color:var(--mute);font-size:11px}
+.shift{width:100%;border-radius:12px;padding:6px 8px;text-align:left;border-left:4px solid var(--pri);background:var(--pri-s);font-size:12px}.shift.offc{border-left-color:var(--red);background:var(--red-s);color:var(--red)}.shift.offc span{color:var(--red);opacity:.85;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.circ.sm{width:36px;height:36px}
+.pm{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.pm button{padding:12px 4px;border-radius:12px;background:var(--gray);font-weight:600}.pm button.on{background:var(--pri);color:var(--bg)}
+.shift b{display:block;font-size:12.5px}.shift span{color:var(--mute);font-size:11px}
 .stp{display:flex;justify-content:center;gap:6px;margin-top:4px}.stp button{width:22px;height:22px;border-radius:50%;background:var(--card);border:1px solid var(--line);line-height:1}
 .hint{font-size:13px;color:var(--mute);margin:0 0 12px}
 .item{display:flex;gap:12px;align-items:flex-start;padding:13px;border-radius:16px;margin-bottom:10px}.item p{margin:0}.item .t{font-weight:600}
 .act{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.btn{padding:9px 15px;border-radius:12px;font-weight:600;font-size:13.5px;background:var(--pri);color:var(--bg)}.btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn{white-space:nowrap;padding:9px 15px;border-radius:12px;font-weight:600;font-size:13.5px;background:var(--pri);color:var(--bg)}.btn.ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
 .btn[disabled]{opacity:.45}a.btn{display:inline-block;text-decoration:none}
 .req{border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px;background:var(--card)}.req h3{margin:0 0 2px;font-size:15.5px}
 .steps{display:flex;gap:4px;margin:14px 0 4px}.steps div{flex:1;font-size:11px;text-align:center;color:var(--mute)}
@@ -65,6 +67,14 @@ h1{font-size:21px;margin:0;font-weight:700;line-height:1.3}.sub{color:var(--mute
 .days{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .days button{padding:9px 13px;border-radius:12px;background:var(--gray);color:var(--mute);font-size:14px;font-weight:600}
 .days button.on{background:var(--grn-s);color:var(--grn);box-shadow:inset 0 0 0 1.5px var(--grn)}.days button.n{background:var(--red-s);color:var(--red)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:10px}.cw{text-align:center;font-size:12px;color:var(--mute);font-weight:600;padding-bottom:2px}
+.cd{aspect-ratio:1/1.08;border-radius:12px;background:var(--gray);color:var(--ink);font-weight:600;font-size:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.15;padding:2px;min-width:0}
+.cd small{font-size:9.5px;font-weight:600;min-height:11px;white-space:nowrap}
+.cd.g{background:var(--grn-s);color:var(--grn);box-shadow:inset 0 0 0 1.5px var(--grn)}.cd.r{background:var(--red-s);color:var(--red);box-shadow:inset 0 0 0 1.5px var(--red)}
+.cd.x{background:repeating-linear-gradient(45deg,var(--gray),var(--gray) 6px,var(--bg) 6px,var(--bg) 12px);color:var(--mute);opacity:.7}.cd.p{opacity:.35}.cd[disabled]{cursor:default}
+.cd.nw{outline:2px dashed var(--pri);outline-offset:1px}
+.md{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.md button{padding:12px 4px;border-radius:12px;background:var(--gray);color:var(--mute);font-weight:600;font-size:13.5px}
+.md .g.on{background:var(--grn-s);color:var(--grn);box-shadow:inset 0 0 0 1.5px var(--grn)}.md .r.on{background:var(--red-s);color:var(--red);box-shadow:inset 0 0 0 1.5px var(--red)}
 .avr{display:grid;grid-template-columns:78px 1fr 1fr;gap:8px;align-items:center;margin-top:8px}.avr b{font-size:14px}.avr button{padding:11px 6px;border-radius:12px;background:var(--gray);color:var(--mute);font-weight:600;font-size:14px}
 .avr button.g.on{background:var(--grn-s);color:var(--grn);box-shadow:inset 0 0 0 1.5px var(--grn)}.avr button.r.on{background:var(--red-s);color:var(--red);box-shadow:inset 0 0 0 1.5px var(--red)}.days button.off.on{background:var(--red-s);color:var(--red);box-shadow:inset 0 0 0 1.5px var(--red)}
 .days button[disabled]{opacity:.4}
@@ -95,9 +105,9 @@ const KEY='aegean-v4',SK='aegean-sub',CLOSED=[2],NW='30 พ.ย. – 6 ธ.ค.'
 const DATES2=[30,1,2,3,4,5,6];
 const STL={ok:'ครบ',bad:'ขาด',warn:'ขาด',closed:'หยุด'};
 const cols=['#2B5A3A','#9A5B3E','#3E6E8C','#8A7A2B','#6B4E8C','#8C3E5E'];
-const TITLE={me:'ของฉัน',home:'ภาพรวมวันนี้',roster:'ตารางพนักงาน',reqs:'คำขอสลับกะ',alerts:'แจ้งเตือน',staff:'จัดการพนักงาน'};
+const TITLE={me:'ของฉัน',home:'ภาพรวมวันนี้',roster:'ตารางพนักงาน',reqs:'คำขอสลับกะ',alerts:'แจ้งเตือน',staff:'จัดการพนักงาน',avail:'ปฏิทินวันว่าง'};
 const TABS=[['roster','ตาราง'],['staff','พนักงาน']],TABS_S=[['me','ของฉัน'],...TABS];
-const I={back:'<path d="M15 5l-7 7 7 7"/>',home:'<path d="M4 11l8-7 8 7v9H4z"/>',bell:'<path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15zM10 21h4"/>',trash:'<path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 002 2h6a2 2 0 002-2l1-12M9 7V4h6v3"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',cam:'<path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.2"/>'};
+const I={back:'<path d="M15 5l-7 7 7 7"/>',home:'<path d="M4 11l8-7 8 7v9H4z"/>',bell:'<path d="M6 17V11a6 6 0 0112 0v6l1.5 2h-15zM10 21h4"/>',trash:'<path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 002 2h6a2 2 0 002-2l1-12M9 7V4h6v3"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',cal:'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>',chk:'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/>',cam:'<path d="M4 8h3l1.5-2h7L17 8h3v11H4z"/><circle cx="12" cy="13" r="3.2"/>'};
 const ic=k=>`<svg viewBox="0 0 24 24">${I[k]}</svg>`;
 const SEED=()=>({need:[4,4,0,4,4,2,1],reqs:[],logs:[],E:[
  {id:0,n:'นิ่ม',av:[0,1,3,4,5],s:[0,1,3,4]},{id:1,n:'ต้น',av:[0,1,3,4,5],s:[0,1,3,4]},
@@ -109,14 +119,29 @@ const dd=a=>Array.isArray(a)?[...new Set(a.map(Number).filter(d=>d>=0&&d<=6&&!CL
 const tt=x=>Array.isArray(x)&&x.length===2&&x[0]>=0&&x[1]<=24&&x[0]<x[1]?[Number(x[0]),Number(x[1])]:[9,17];
 const uid=()=>Math.random().toString(36).slice(2,9),tok=()=>(uid()+uid()).slice(0,10);
 function sane(o){try{if(!o||!Array.isArray(o.E)||!Array.isArray(o.need)||o.need.length!==7)return null;
- const seen=new Set(),E=[];o.E.forEach(e=>{const id=Number(e&&e.id);if(!Number.isInteger(id)||seen.has(id))return;seen.add(id);const s=dd(e.s),t={};s.forEach(d=>t[d]=tt(e.t&&e.t[d]));E.push({id,n:cn(e.n)||'พนักงาน',av:dd(e.av),s,t,tk:(/^[a-z0-9]{6,12}$/.test(e.tk)?e.tk:tok()),tel:cl(e.tel).slice(0,20),fn:cl(e.fn).slice(0,60),addr:cl(e.addr).slice(0,200),...(typeof e.ph==='string'&&e.ph.startsWith('data:image/')?{ph:e.ph}:{})})});
+ const seen=new Set(),E=[];o.E.forEach(e=>{const id=Number(e&&e.id);if(!Number.isInteger(id)||seen.has(id))return;seen.add(id);const s=dd(e.s),t={};s.forEach(d=>t[d]=tt(e.t&&e.t[d]));E.push({id,n:cn(e.n)||'พนักงาน',av:dd(e.av),s,t,tk:(typeof e.tk==='string'&&/^[a-z0-9]{6,12}$/.test(e.tk)?e.tk:tok()),tel:cl(e.tel).slice(0,20),fn:cl(e.fn).slice(0,60),addr:cl(e.addr).slice(0,200),...(typeof e.ph==='string'&&e.ph.startsWith('data:image/')?{ph:e.ph}:{})})});
  E.sort((a,b)=>a.id-b.id);
  const need=o.need.map((n,d)=>CLOSED.includes(d)?0:Math.max(0,Math.min(20,parseInt(n)||0)));
  const reqs=(Array.isArray(o.reqs)?o.reqs:[]).filter(r=>r&&seen.has(r.b)&&(r.k==='assign'||seen.has(r.a))&&Number.isInteger(r.d)&&['wait_b','wait_owner','done','no'].includes(r.st)).map(r=>({id:String(r.id||uid()),k:r.k==='assign'?'assign':'swap',a:r.k==='assign'?null:r.a,b:r.b,d:r.d,e:Number.isInteger(r.e)?r.e:null,t:tt(r.t),st:r.st,at:Number(r.at)||0}));
  const logs=(Array.isArray(o.logs)?o.logs:[]).slice(0,50).map(l=>({t:cl(l&&l.t)}));
  return{need,rate:(o.rate!=null&&Number.isFinite(Number(o.rate)))?Math.max(0,Math.min(9999,Math.round(Number(o.rate)))):40,E,reqs,logs}}catch(e){return null}}
-const saneSub=o=>{const r={};if(o&&typeof o==='object')Object.keys(o).forEach(k=>{const s=o[k];if(s&&Array.isArray(s.av)&&Array.isArray(s.off))r[k]={av:dd(s.av),off:dd(s.off),at:Number(s.at)||0}});return r};
+const saneSub=o=>{const r={};if(o&&typeof o==='object')Object.keys(o).forEach(k=>{const s=o[k];if(s&&Array.isArray(s.av)&&Array.isArray(s.off)){const av=dd(s.av),off=dd(s.off);r[k]={av,off,at:Number(s.at)||0,cal:s.cal?saneCal(s.cal):legacyCal({av,off})}}});return r};
 const route=()=>{const m=/^#s-(\d+)-([a-z0-9]+)$/.exec(location.hash);return m?{id:+m[1],tk:m[2]}:null},isStaff=()=>!!route();
+const MON=['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'],MS=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+const NWS=new Date(2026,10,30),NWE=new Date(2026,11,6);
+const dk=dt=>dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0');
+const pk=k=>{const[y,m,d]=k.split('-').map(Number);return new Date(y,m-1,d)};
+const wdi=dt=>(dt.getDay()+6)%7;
+const clab=k=>{const dt=pk(k);return DAYS[wdi(dt)]+' '+dt.getDate()+' '+MS[dt.getMonth()]};
+const csum=c=>c.st==='off'?'ไม่ว่าง':c.t?'ว่าง '+ft(c.t[0])+'–'+ft(c.t[1]):'ว่างทั้งวัน';
+const saneCal=o=>{const r={};if(o&&typeof o==='object')Object.keys(o).slice(0,200).forEach(k=>{const c=o[k];if(!/^\d{4}-\d{2}-\d{2}$/.test(k)||!c||(c.st!=='av'&&c.st!=='off'))return;r[k]={st:c.st,t:c.st==='av'&&c.t?tt(c.t):null,note:cl(c.note).slice(0,100)}});return r};
+function legacyCal(s){const r={};if(!s)return r;for(let i=0;i<7;i++){const dt=new Date(2026,10,30+i),w=wdi(dt),k=dk(dt);if(CLOSED.includes(w))continue;if(s.off.includes(w))r[k]={st:'off',t:null,note:''};else if(s.av.includes(w))r[k]={st:'av',t:null,note:''}}return r}
+let WK=0;
+const wdate=d=>new Date(2026,10,23+7*WK+d);
+const todayWK=()=>{const t=new Date();t.setHours(0,0,0,0);return Math.floor((t-new Date(2026,10,23))/(7*864e5))};
+const weekLabel=()=>{const a=wdate(0),b=wdate(6);return a.getDate()+(a.getMonth()!==b.getMonth()?' '+MS[a.getMonth()]:'')+' – '+b.getDate()+' '+MS[b.getMonth()]+' '+(b.getFullYear()+543)};
+function offRec(e,d){const r=SUB[e.id],c=r&&r.cal&&r.cal[dk(wdate(d))];return c&&c.st==='off'?c:null}
+const offOn=(e,d)=>!!offRec(e,d),offWhy=(e,d)=>{const c=offRec(e,d);return c&&c.note?c.note:''};
 function units(){return{core:JSON.stringify({need:S.need,rate:S.rate,logs:S.logs}),emp:Object.fromEntries(S.E.map(e=>[e.id,JSON.stringify(e)])),rq:Object.fromEntries(S.reqs.map(r=>[r.id,JSON.stringify(r)]))}}
 let S=sane(raw(KEY)||raw('aegean-v3'))||sane(SEED()),U=units(),stack=[route()?'me':'roster'],edit=false,SUB=saneSub(raw(SK)),DB=null,PF=null,ready=false,preview=false,quiet=0,rbt=0,lastSave=0,sv=0;
 const $=s=>document.querySelector(s),emp=i=>S.E.find(e=>e.id===i),rq=id=>S.reqs.find(r=>r.id===id),cur=()=>stack[stack.length-1];
@@ -129,14 +154,14 @@ function pending(){const u=units(),w=[],x=[],o=OWN(),m=me();
  if(o){for(const k in U.emp)if(!(k in u.emp))x.push('emp/'+k);for(const k in U.rq)if(!(k in u.rq))x.push('rq/'+k)}
  return{w,x}}
 const dirty=()=>{const p=pending();return p.w.length>0||p.x.length>0};
-const cov=d=>S.E.filter(e=>e.s.includes(d)).length;
+const cov=d=>S.E.filter(e=>e.s.includes(d)&&!offOn(e,d)).length;
 const lvl=d=>CLOSED.includes(d)?'closed':cov(d)>=S.need[d]?'ok':cov(d)===0?'bad':'warn';
 const lc=d=>{const l=lvl(d);return l==='warn'?'bad':l};
 const col=e=>cols[e.id%6];
 const avatar=(e,b)=>e.ph?`<img class="av${b?' big':''}" src="${e.ph}" alt="">`:`<span class="av${b?' big':''}">${e.n.slice(0,1)}</span>`;
 const dl=a=>a.map(d=>DAYS[d]).join(' ')||'—';
 const ft=x=>String(Math.floor(x)).padStart(2,'0')+':'+(x%1?'30':'00');
-const sh=(e,d)=>(e.t&&e.t[d])||[9,17],hrs=e=>e.s.reduce((n,d)=>n+sh(e,d)[1]-sh(e,d)[0],0),thb=h=>Math.round(h*S.rate).toLocaleString('th-TH'),fh=h=>String(Math.round(h*10)/10),totH=()=>S.E.reduce((n,e)=>n+hrs(e),0);
+const sh=(e,d)=>(e.t&&e.t[d])||[9,17],hrs=e=>e.s.filter(d=>!offOn(e,d)).reduce((n,d)=>n+sh(e,d)[1]-sh(e,d)[0],0),thb=h=>Math.round(h*S.rate).toLocaleString('th-TH'),fh=h=>String(Math.round(h*10)/10),totH=()=>S.E.reduce((n,e)=>n+hrs(e),0);
 const BASE='https://claude.ai/artifact/Bbx2WV8XLgqa82gvsvCLBB',lk=e=>BASE+'#s-'+e.id+'-'+e.tk;
 const lmsg=e=>`สวัสดี ${e.n} กรุณากดลิงก์นี้เพื่อส่งวันว่าง ดูตารางงาน และตอบรับคำขอสลับกะของคุณ: ${lk(e)}`;
 const pa=(d,id)=>S.reqs.some(r=>r.k==='assign'&&r.d===d&&r.b===id&&(r.st==='wait_b'||r.st==='wait_owner'));
@@ -145,46 +170,76 @@ function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');cl
 function log(t){if(OWN())S.logs=[{t},...S.logs].slice(0,50)}
 function go(v){if(v!==cur())stack.push(v);edit=false;render();scrollTo(0,0)}
 function cands(a,d){return S.E.filter(b=>b.id!==a.id&&!b.s.includes(d)&&b.av.includes(d)).map(b=>({b,swaps:b.s.filter(x=>!a.s.includes(x)&&a.av.includes(x))}))}
+const SEEN_K='aegean-seen';let SEEN=raw(SEEN_K)||{},AI=false;
+const subOk=id=>{const r=SUB[id];return !!(r&&r.cal&&Object.keys(r.cal).length)};
+const subNew=id=>subOk(id)&&(SUB[id].at||0)>(SEEN[id]||0);
+const newCount=()=>S.E.filter(e=>subNew(e.id)).length;
+function cyc(){const t=new Date();t.setHours(0,0,0,0);const wd=wdi(t),y=t.getFullYear(),mo=t.getMonth(),d0=t.getDate()-wd;
+ return{left:5-wd,dl:new Date(y,mo,d0+5),st:new Date(y,mo,d0-1),ns:new Date(y,mo,d0+7),ne:new Date(y,mo,d0+13)}}
+function dlInfo(){const C=cyc(),l=C.left,lv=l<0?'over':l===0?'today':l<=2?'soon':'ok';
+ const rg=C.ns.getDate()+(C.ns.getMonth()!==C.ne.getMonth()?' '+MS[C.ns.getMonth()]:'')+' – '+C.ne.getDate()+' '+MS[C.ne.getMonth()];
+ return{...C,lv,txt:l<0?'เลยกำหนดแล้ว':l===0?'วันนี้เป็นวันสุดท้าย':'อีก '+l+' วัน',ds:'เสาร์ '+C.dl.getDate()+' '+MS[C.dl.getMonth()],rg,cls:lv==='ok'?'ok':lv==='soon'?'warn':'bad'}}
+const subDone=id=>{const r=SUB[id],C=cyc();return !!(r&&r.cal&&(r.at||0)>=C.st.getTime()&&Object.keys(r.cal).some(k=>{const d=pk(k);return d>=C.ns&&d<=C.ne}))};
+const fmtT=t=>{const d=new Date(t);return d.getDate()+' '+MS[d.getMonth()]+' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};
+function badge(){const nU=S.E.filter(e=>!subDone(e.id)).length;if(dlInfo().lv!=='ok'&&nU)return`<b>${nU}</b>`;const n=newCount();return n?`<b class="g">${n}</b>`:''}
+function dlCard(){const o=OWN(),I=dlInfo(),tot=S.E.length,n=S.E.filter(e=>!subDone(e.id)).length;
+ if(!o){const m=me();if(m==null||subDone(m))return'';return`<div class="item ${I.cls}" style="display:block"><p class="t">ถึงเวลาลงวันว่างแล้ว · เดดไลน์ ${I.ds} (${I.txt})</p><p style="font-size:13px">สำหรับสัปดาห์ ${I.rg}</p><div class="act"><button class="btn" data-a="goav">ลงวันว่างตอนนี้</button></div></div>`}
+ return`<button class="item ${I.cls}" style="width:100%;text-align:left;display:block" data-a="status"><p class="t">เดดไลน์ส่งวันว่าง ${I.ds} · ${I.txt}</p><p style="font-size:13px">สัปดาห์ ${I.rg} · ส่งแล้ว ${tot-n}/${tot} คน${n?' · ต้องตามอีก '+n+' คน':' · ครบแล้ว'}</p></button>`}
 function rosterH(){
   const o=OWN(),m=me();
-  let h=`<div class="card"><div class="ch"><h2>${edit?'แก้ไขตาราง':'ตารางทั้งสัปดาห์'}</h2><div class="act" style="margin:0"><button class="circ" data-a="snap" aria-label="บันทึกภาพตารางงาน">${ic('cam')}</button><button class="btn ${edit?'':'ghost'}" data-a="edit">${edit?'เสร็จสิ้น':o?'แก้ไขตาราง':'เลือกกะของฉัน'}</button></div></div>
-  <p class="hint">${edit?(o?'แตะช่องว่างเพื่อเพิ่มกะ แตะกะเพื่อเลือกเวลาหรือลบ ปรับจำนวนคนที่ต้องการด้วย − / + ระบบบันทึกให้อัตโนมัติ':'แก้ไขได้เฉพาะแถวของคุณ แตะช่องว่างเพื่อเพิ่มกะ แตะกะเพื่อเลือกเวลาหรือลบ'):(o?'กด "แก้ไขตาราง" เพื่อเพิ่มหรือปรับกะ':'กด "เลือกกะของฉัน" เพื่อลงกะของคุณ')}</p><div class="scroll"><div class="grid"><div></div>`;
-  for(let d=0;d<7;d++){const x=CLOSED.includes(d);h+=`<div class="dh ${lc(d)}">${DAYS[d]} ${DATES[d]}<small>${x?'ร้านหยุด':cov(d)+'/'+S.need[d]+' คน'}</small>${edit&&!x&&o?`<div class="stp"><button data-need="${d}:-1" aria-label="ลดจำนวน">−</button><button data-need="${d}:1" aria-label="เพิ่มจำนวน">+</button></div>`:''}</div>`}
+  let h=`<div class="card"><div class="ch"><h2>${edit?'แก้ไขตาราง':'ตารางทั้งสัปดาห์'}</h2><button class="btn ${edit?'':'ghost'}" data-a="edit">${edit?'เสร็จสิ้น':o?'แก้ไขตาราง':'เลือกกะของฉัน'}</button></div>
+  <div class="act" style="margin:0 0 12px;gap:10px"><button class="circ" data-go="avail" aria-label="ปฏิทินวันว่าง">${ic('cal')}</button><button class="circ" data-a="snap" aria-label="บันทึกภาพตารางงาน">${ic('cam')}</button>${o?`<button class="circ" data-a="status" aria-label="สถานะการลงวันว่างของพนักงาน">${ic('chk')}${badge()}</button>`:''}</div>
+  <p class="hint">${edit?(o?'แตะช่องว่างเพื่อเพิ่มกะ แตะกะเพื่อเลือกเวลาหรือลบ ปรับจำนวนคนที่ต้องการด้วย − / + ระบบบันทึกให้อัตโนมัติ':'แก้ไขได้เฉพาะแถวของคุณ แตะช่องว่างเพื่อเพิ่มกะ แตะกะเพื่อเลือกเวลาหรือลบ'):(o?'กด "แก้ไขตาราง" เพื่อเพิ่มหรือปรับกะ':'กด "เลือกกะของฉัน" เพื่อลงกะของคุณ')}</p><div class="ch" style="margin:0 0 10px"><button class="circ sm" data-wk="-1" aria-label="สัปดาห์ก่อน">${ic('back')}</button><button class="link" style="flex:1;color:var(--ink);font-size:15px" data-wk="t">${weekLabel()}</button><button class="circ sm" data-wk="1" aria-label="สัปดาห์ถัดไป" style="transform:scaleX(-1)">${ic('back')}</button></div><div class="scroll"><div class="grid"><div></div>`;
+  for(let d=0;d<7;d++){const x=CLOSED.includes(d);h+=`<div class="dh ${lc(d)}">${DAYS[d]} ${wdate(d).getDate()}<small>${x?'ร้านหยุด':cov(d)+'/'+S.need[d]+' คน'}</small>${edit&&!x&&o?`<div class="stp"><button data-need="${d}:-1" aria-label="ลดจำนวน">−</button><button data-need="${d}:1" aria-label="เพิ่มจำนวน">+</button></div>`:''}</div>`}
   S.E.forEach(e=>{
     const c=can(e.id);
     h+=`<div class="emp">${avatar(e)}<div><b>${e.n}${e.id===m?' (คุณ)':''}</b><small>${fh(hrs(e))} ชม. · ${thb(hrs(e))} บ.</small></div></div>`;
     for(let d=0;d<7;d++){
       if(CLOSED.includes(d)){h+='<div class="cell x"></div>';continue}
       let inner='';
-      if(e.s.includes(d)){const[a,b]=sh(e,d),body=`<b>${ft(a)}–${ft(b)}</b><span>${fh(b-a)} ชม. · ${thb(b-a)} บ.</span>`;inner=c&&edit?`<button class="shift" data-tg="${e.id}:${d}">${body}</button>`:`<div class="shift">${body}</div>`}
+      if(offOn(e,d)){inner=`<div class="shift offc"><b>ไม่ว่าง</b><span>${offWhy(e,d)||'—'}</span></div>`}
+      else if(e.s.includes(d)){const[a,b]=sh(e,d),body=`<b>${ft(a)}–${ft(b)}</b><span>${fh(b-a)} ชม. · ${thb(b-a)} บ.</span>`;inner=c&&edit?`<button class="shift" data-tg="${e.id}:${d}">${body}</button>`:`<div class="shift">${body}</div>`}
       else if(edit&&c)inner=`<button class="add" data-tg="${e.id}:${d}" aria-label="เพิ่มกะ">+</button>`;
       h+=`<div class="cell">${inner}</div>`;
     }
   });
-  return h+`</div></div></div>`;
+  return h+`</div></div></div>`+rateH();
 }
 function staffH(){
   const o=OWN();
   let h=`<div class="ch"><span class="hint" style="margin:0">${o?'กดแก้ไขข้อมูลส่วนตัวเพื่อใส่ชื่อ รูป และเบอร์ติดต่อ':'ดูข้อมูลทุกคนได้ แก้ไขได้เฉพาะข้อมูลของคุณ'}</span>${o?'<button class="btn" data-a="addemp">+ เพิ่ม</button>':''}</div>`;
   S.E.forEach(e=>{
     const s=SUB[e.id],c=can(e.id);
-    h+=`<div class="card" style="padding:14px"><div class="act" style="margin:0;flex-wrap:nowrap">${avatar(e,1)}<div style="flex:1;min-width:0"><b>${e.n}${e.fn?' · '+e.fn:''}</b><div class="sub">ตำแหน่ง: พนักงาน${e.tel?' · โทร '+e.tel:''}</div>${e.addr?`<div class="sub">${e.addr}</div>`:''}${c?`<div class="act"><button class="btn ghost" data-prof="${e.id}">แก้ไขข้อมูลส่วนตัว</button></div>`:''}</div>
+    h+=`<div class="card" style="padding:14px"><div class="act" style="margin:0;flex-wrap:nowrap">${avatar(e,1)}<div style="flex:1;min-width:0"><b>${e.n}${e.fn?' · '+e.fn:''}</b>${o?`<span class="tag ${subDone(e.id)?'ok':'bad'}" style="margin-left:6px">${subDone(e.id)?'ลงวันว่างแล้ว':'ยังไม่ลง'}</span>`:''}<div class="sub">ตำแหน่ง: พนักงาน${e.tel?' · โทร '+e.tel:''}</div>${e.addr?`<div class="sub">${e.addr}</div>`:''}${c?`<div class="act"><button class="btn ghost" data-prof="${e.id}">แก้ไขข้อมูลส่วนตัว</button>${o?`<button class="btn ghost" data-avgo="${e.id}">ปฏิทินวันว่าง</button>`:''}</div>`:''}</div>
     ${o?`<button class="circ" data-del="${e.id}" aria-label="ลบพนักงาน">${ic('trash')}</button>`:''}</div>
     <div class="sub" style="margin-top:10px">วันที่ว่าง</div><div class="days">${DAYS.map((x,d)=>`<button class="${e.av.includes(d)?'on':CLOSED.includes(d)?'':'n'}" ${CLOSED.includes(d)||!c?'disabled':''} data-av="${e.id}:${d}">${x}</button>`).join('')}</div>
-    <div class="act" style="margin-top:12px"><span class="sub" style="flex:1">${s?`ส่งแล้ว · ว่าง ${dl(s.av)} · ขอหยุด ${dl(s.off)}`:'ยังไม่ส่งวันว่างสัปดาห์หน้า'}</span>${s&&o?`<button class="btn ghost" data-use="${e.id}">ใช้ข้อมูลนี้</button>`:''}</div></div>`;
+    </div>`;
   });
   return h;
 }
+function availCard(m,ttl){if(!PF||PF.me!==m){const s=SUB[m];PF={me:m,cal:s&&s.cal?JSON.parse(JSON.stringify(s.cal)):legacyCal(s),mo:[new Date().getFullYear(),new Date().getMonth()]}}
+  const cal=()=>{const CY=cyc(),[y,mo]=PF.mo,off=(new Date(y,mo,1).getDay()+6)%7,dim=new Date(y,mo+1,0).getDate(),td=new Date();td.setHours(0,0,0,0);
+   let g=DAYS.map(x=>`<div class="cw">${x}</div>`).join('')+'<div></div>'.repeat(off);
+   for(let d=1;d<=dim;d++){const dt=new Date(y,mo,d),k=dk(dt),c=PF.cal[k],x=CLOSED.includes(wdi(dt)),pst=false,cls=x?'x':c?(c.st==='av'?'g':'r'):'',nw=dt>=CY.ns&&dt<=CY.ne;
+    g+=`<button class="cd ${cls} ${nw&&!x?'nw':''}" ${x?'disabled':''} data-cd="${k}" aria-label="${clab(k)}">${d}<small>${x?'หยุด':c&&!pst?(c.st==='off'?'ไม่ว่าง':c.t?'บางช่วง':'ว่าง'):''}</small></button>`}
+   return`<div class="ch" style="margin:14px 0 0;gap:4px"><button class="circ sm" data-cm="-12" aria-label="ปีก่อน">«</button><button class="circ sm" data-cm="-1" aria-label="เดือนก่อน">${ic('back')}</button><button class="link" style="flex:1;color:var(--ink);font-size:16px" data-pick="1" aria-label="เลือกเดือนและปี">${MON[mo]} ${y+543} ▾</button><button class="circ sm" data-cm="1" aria-label="เดือนถัดไป" style="transform:scaleX(-1)">${ic('back')}</button><button class="circ sm" data-cm="12" aria-label="ปีถัดไป">»</button></div><div class="cal">${g}</div>`};
+  const keys=Object.keys(PF.cal).sort(),nOk=keys.filter(k=>PF.cal[k].st==='av').length,nOff=keys.length-nOk;
+  const lst=keys.length?keys.map(k=>{const c=PF.cal[k];return`<div class="act" style="justify-content:space-between;margin:8px 0 0;flex-wrap:nowrap"><button class="link" style="text-align:left" data-cd="${k}">${clab(k)}</button><span class="tag ${c.st==='av'?'ok':'bad'}">${csum(c)}</span></div>${c.st==='off'?`<div class="sub">เหตุผล: ${c.note||'—'}</div>`:''}`}).join(''):'<div class="sub" style="margin-top:10px">ยังไม่ได้เลือกวัน แตะวันที่ในปฏิทินเพื่อเลือก</div>';
+  return`<div class="card" id="availcard"><div class="ch" style="margin:0"><h2>${ttl}</h2></div><p class="hint" style="margin:2px 0 0">สัปดาห์หน้า ${dlInfo().rg} · เดดไลน์ ${dlInfo().ds} (${dlInfo().txt}) · ร้านหยุดทุกวันพุธ</p><p class="hint" style="margin:10px 0 0">แตะวันที่เพื่อเลือก "ว่าง" (เขียว) หรือ "ไม่ว่าง" (แดง) ว่างไม่ต้องใส่เหตุผล ไม่ว่างต้องระบุเหตุผล ข้อมูลไม่ว่างจะขึ้นในตารางอัตโนมัติ แตะชื่อเดือนเพื่อเลือกเดือนและปี</p>
+  ${cal()}
+  <div class="act" style="margin-top:14px"><span class="tag ok">ว่าง ${nOk} วัน</span><span class="tag bad">ไม่ว่าง ${nOff} วัน</span></div>
+  <div style="margin-top:6px">${lst}</div>
+  <div class="act" style="margin-top:20px"><button class="btn" style="flex:1;padding:13px" data-psend="1">${OWN()?'บันทึกวันว่าง':SUB[m]?'ส่งข้อมูลอีกครั้ง':'ส่งข้อมูล'}</button></div>${SUB[m]?`<p class="hint" style="margin:10px 0 0">${OWN()?'มีข้อมูลที่บันทึกไว้แล้ว':'ส่งข้อมูลแล้ว เจ้าของร้านจะเห็นในระบบ'}</p>`:''}</div>`}
 function meH(){
-  const m=me(),e=emp(m);if(!PF||PF.me!==m){const s=SUB[m];PF={me:m,av:s?[...s.av]:[0,1,3,4,5,6],off:s?[...s.off]:[]}}
-  const rows=()=>DAYS.map((x,d)=>CLOSED.includes(d)?`<div class="avr"><b>${x} ${DATES2[d]}</b><span class="sub" style="grid-column:span 2">ร้านหยุด</span></div>`:`<div class="avr"><b>${x} ${DATES2[d]}</b><button class="g ${PF.av.includes(d)?'on':''}" data-pa="${d}">ว่าง</button><button class="r ${PF.off.includes(d)?'on':''}" data-po="${d}">ไม่ว่าง</button></div>`).join('');
-  const mine=e.s.length?e.s.map(d=>{const[a,b]=sh(e,d);return`<div class="drow" style="grid-template-columns:64px 1fr auto"><b>${DAYS[d]} ${DATES[d]}</b><span>${ft(a)}–${ft(b)}</span><span class="sub">${fh(b-a)} ชม. · ${thb(b-a)} บาท</span></div>`}).join('')+`<p style="margin:10px 0 0;font-weight:600">รวม ${fh(hrs(e))} ชั่วโมง · ${thb(hrs(e))} บาท</p>`:'<div class="empty" style="padding:14px">ยังไม่มีกะในสัปดาห์นี้</div>';
+  const m=me(),e=emp(m);
+  const mine=e.s.length?e.s.map(d=>{const[a,b]=sh(e,d);return`<div class="drow" style="grid-template-columns:64px 1fr auto"><b>${DAYS[d]} ${wdate(d).getDate()}</b><span>${ft(a)}–${ft(b)}</span><span class="sub">${fh(b-a)} ชม. · ${thb(b-a)} บาท</span></div>`}).join('')+`<p style="margin:10px 0 0;font-weight:600">รวม ${fh(hrs(e))} ชั่วโมง · ${thb(hrs(e))} บาท</p>`:'<div class="empty" style="padding:14px">ยังไม่มีกะในสัปดาห์นี้</div>';
   const prof=`<div class="card"><div class="act" style="margin:0;flex-wrap:nowrap">${avatar(e,1)}<div style="flex:1;min-width:0"><b>${e.n}${e.fn?' · '+e.fn:''}</b><div class="sub">${e.tel?'โทร '+e.tel:'ยังไม่ได้กรอกเบอร์โทร'}</div>${e.addr?`<div class="sub">${e.addr}</div>`:''}<div class="act"><button class="btn ghost" data-prof="${m}">แก้ไขข้อมูลส่วนตัว</button></div></div></div></div>`;
-  return prof+`<div class="card"><div class="ch"><h2>ตารางงานของฉัน</h2><button class="link" data-go="roster">เลือกกะ →</button></div>${mine}</div>
-  <div class="card"><div class="ch" style="margin:0"><h2>การส่งข้อมูลวันที่ว่างทำงาน</h2></div><p class="hint" style="margin:2px 0 0">สัปดาห์ ${NW} · ร้านหยุดทุกวันพุธ</p><p class="hint" style="margin:10px 0 0">แตะ "ว่าง" (เขียว) หรือ "ไม่ว่าง" (แดง) ของแต่ละวัน</p>${rows()}
-  <div class="act" style="margin-top:12px"><span class="tag ok">ว่าง ${PF.av.length} วัน</span><span class="tag bad">ไม่ว่าง ${PF.off.length} วัน</span></div>
-  <div class="act" style="margin-top:20px"><button class="btn" style="flex:1;padding:13px" data-psend="1">${SUB[m]?'ส่งข้อมูลอีกครั้ง':'ส่งข้อมูล'}</button></div>${SUB[m]?'<p class="hint" style="margin:10px 0 0">ส่งข้อมูลแล้ว เจ้าของร้านจะเห็นในระบบ</p>':''}</div>`;
+  return dlCard()+prof+`<div class="card"><div class="ch"><h2>ตารางงานของฉัน</h2><button class="link" data-go="roster">เลือกกะ →</button></div>${mine}</div>`+availCard(m,'การส่งข้อมูลวันที่ว่างทำงาน');
 }
+let AV=null;
+function availH(){if(!S.E.length)return'<div class="card empty">ยังไม่มีพนักงาน</div>';if(!OWN())AV=me();if(AV==null||!emp(AV))AV=S.E[0].id;const e=emp(AV);
+ const chips=S.E.map(x=>`<button class="${x.id===AV?'on':''}" data-avsel="${x.id}">${x.n}</button>`).join('');
+ return(OWN()?`<div class="card"><div class="sub">เลือกพนักงาน</div><div class="days">${chips}</div></div>`:'')+availCard(AV,'วันว่างของ '+e.n)}
 let rt=0;function softRender(){const a=document.activeElement;if(a&&(a.tagName==='INPUT'||a.tagName==='TEXTAREA')&&a.type!=='file'){clearTimeout(rt);rt=setTimeout(softRender,800);return}render()}
 function render(){try{draw()}catch(e){$('#main').innerHTML='<div class="card empty">เกิดข้อผิดพลาดในการแสดงผล<br>กรุณารีเฟรชหน้าอีกครั้ง</div>'}}
 function draw(){
@@ -193,8 +248,8 @@ function draw(){
     $('#title').textContent=ready?'ลิงก์ไม่ถูกต้อง':'กำลังโหลด…';$('#sub').textContent='พอร์ทัลพนักงาน';$('#circs').innerHTML=exit;$('#tabs').style.display='none';
     $('#main').innerHTML=`<div class="card empty">${ready?'ลิงก์นี้ไม่ถูกต้องหรือถูกยกเลิกแล้ว<br>กรุณาขอลิงก์ใหม่จากเจ้าของร้าน':'กำลังโหลดข้อมูล…'}</div>`;return}
   $('#tabs').style.display='';
-  let v=cur();const V={me:meH,roster:rosterH,staff:staffH};if(!V[v]||(v==='me'&&!st))v=hk;
-  $('#title').textContent=v==='me'?'สวัสดี '+emp(m).n:v==='staff'&&st?'พนักงาน':TITLE[v];$('#sub').textContent=(st?'พอร์ทัลพนักงาน · ':'')+'สัปดาห์ 23 – 29 พ.ย. 2569 · ร้านหยุดทุกวันพุธ';
+  let v=cur();const V={me:meH,roster:rosterH,avail:availH,staff:staffH};if(!V[v]||(v==='me'&&!st))v=hk;
+  $('#title').textContent=v==='me'?'สวัสดี '+emp(m).n:v==='staff'&&st?'พนักงาน':TITLE[v];$('#sub').textContent=(st?'พอร์ทัลพนักงาน · ':'')+'สัปดาห์ '+weekLabel()+' · ร้านหยุดทุกวันพุธ';
   $('#circs').innerHTML=(v===hk?'':`<button class="circ" data-a="back" aria-label="ย้อนกลับ">${ic('back')}</button><button class="circ" data-a="home" aria-label="หน้าหลัก">${ic('home')}</button>`)+exit;
   $('#tabs').innerHTML=(st?TABS_S:TABS).map(([k,l])=>`<button class="tab ${k===v?'on':''}" data-go="${k}">${l}</button>`).join('');
   $('#main').innerHTML=V[v]();
@@ -225,6 +280,12 @@ function tsum(){const h=TS.en-TS.st,el=$('#tsum');if(el)el.textContent=h>0?`ร�
 function openTime(e,d){const p=emp(e),has=p.s.includes(d),[st,en]=has?sh(p,d):[9,17];TS={e,d,st,en};
  const op=v=>TO.map(x=>`<option value="${x}"${x===v?' selected':''}>${ft(x)}</option>`).join('');
  $('#sheet').innerHTML=`<h2>${has?'แก้ไขกะ':'เพิ่มกะ'}${FULL[d]}</h2><p class="sub">${p.n} · อัตราจ้าง ${S.rate} บาท/ชั่วโมง</p><div class="act" style="margin-top:14px"><label class="sub">เริ่ม<br><select class="inp" data-ts="st">${op(st)}</select></label><label class="sub">เลิก<br><select class="inp" data-ts="en">${op(en)}</select></label></div><p id="tsum" style="font-weight:600;margin:14px 0 0"></p><div class="act" style="margin-top:16px"><button class="btn" id="tsave" data-tsave="1" style="flex:1">บันทึกกะ</button>${has?'<button class="btn ghost" data-tdel="1">ลบกะ</button>':''}<button class="btn ghost" data-a="close">ปิด</button></div>`;$('#mask').classList.add('show');tsum()}
+function openStatus(){const I=dlInfo(),ok=S.E.filter(e=>subDone(e.id)),no=S.E.filter(e=>!subDone(e.id));
+ const row=e=>{const r=SUB[e.id],y=subDone(e.id),cal=y?r.cal:{},k=Object.keys(cal).filter(x=>{const d=pk(x);return d>=I.ns&&d<=I.ne}),a=k.filter(x=>cal[x].st==='av').length,f=k.length-a;
+  return`<div class="cand"><div class="row">${avatar(e)}<div style="flex:1;min-width:0"><b>${e.n}</b>${y?`<div class="sub">ส่งเมื่อ ${r.at?fmtT(r.at):'—'} · ว่าง ${a} วัน · ไม่ว่าง ${f} วัน</div>`:`<div class="sub">ยังไม่ได้ลงวันว่าง</div>`}</div>${y?`<span class="tag ok">ลงแล้ว${subNew(e.id)?' · ใหม่':''}</span>`:'<span class="tag bad">ยังไม่ลง</span>'}</div><div class="act"><button class="btn ghost" data-avgo="${e.id}">ดูปฏิทิน</button></div></div>`};
+ $('#sheet').innerHTML=`<h2>สถานะการลงวันว่าง</h2><div class="item ${I.cls}" style="display:block;margin-top:10px"><p class="t">ครั้งนี้ ${I.ds} (${I.txt})</p><p style="font-size:13px">สำหรับสัปดาห์ ${I.rg} · ลงแล้ว ${ok.length} จาก ${S.E.length} คน${no.length?'':' · ครบทุกคน'}</p></div>${no.map(row).join('')}${ok.map(row).join('')}<button class="btn ghost" style="width:100%;margin-top:16px" data-a="close">ปิด</button>`;
+ $('#mask').classList.add('show');
+ S.E.forEach(e=>{if(subOk(e.id))SEEN[e.id]=SUB[e.id].at||0});try{localStorage.setItem(SEEN_K,JSON.stringify(SEEN))}catch(x){}}
 function openProfile(id){const p=emp(id);if(!p)return;
  const f=(l,k,v,x)=>`<div class="sub" style="margin-top:10px">${l}</div>${k==='addr'?`<textarea class="inp" rows="3" style="width:100%;resize:vertical" data-addr="${id}" aria-label="${l}">${v}</textarea>`:`<input class="inp" style="width:100%" ${x||''} value="${v}" data-${k}="${id}" aria-label="${l}">`}`;
  $('#sheet').innerHTML=`<h2>แก้ไขข้อมูลส่วนตัว</h2><div class="act" style="flex-wrap:nowrap;margin-top:12px"><label style="cursor:pointer"><input type="file" accept="image/*" data-ph="${id}" hidden><span id="pv">${avatar(p,1)}</span></label><div class="sub">แตะรูปเพื่ออัปโหลดภาพของคุณ</div></div>${f('ชื่อจริง','fn',p.fn||'')}${f('ชื่อเล่น','name',p.n)}${f('เบอร์โทรศัพท์','tel',p.tel||'','inputmode="tel"')}${f('ที่อยู่ปัจจุบัน','addr',p.addr||'')}<button class="btn" style="width:100%;margin-top:18px" data-a="close">เสร็จสิ้น</button>`;$('#mask').classList.add('show')}
@@ -236,19 +297,27 @@ function snapDraw(){
  const tx=(t,x,y,sz,wt,col,al,mw)=>{g.font=wt+' '+sz+'px '+F;g.fillStyle=col;g.textAlign=al||'left';g.textBaseline='middle';if(mw)g.fillText(t,x,y,mw);else g.fillText(t,x,y)};
  g.fillStyle='#fff';g.fillRect(0,0,W,H);
  tx('Aegean · ตารางงาน',P,P+26,30,700,'#1D2A1F');
- tx('สัปดาห์ 23 – 29 พ.ย. 2569 · ร้านหยุดทุกวันพุธ',P,P+62,18,400,'#737D74');
+ tx('สัปดาห์ '+weekLabel()+' · ร้านหยุดทุกวันพุธ',P,P+62,18,400,'#737D74');
  for(let d=0;d<7;d++){const x=P+NC+d*DC+4,l=lvl(d),k=l==='ok'?['#DFF3E9','#23885A']:l==='closed'?['#EDEFEB','#737D74']:['#FBE7EA','#C8445A'];
-  rr(x,TOP,DC-8,HH-10,14,k[0]);tx(DAYS[d]+' '+DATES[d],x+(DC-8)/2,TOP+28,20,700,k[1],'center');tx(l==='closed'?'ร้านหยุด':cov(d)+'/'+S.need[d]+' คน',x+(DC-8)/2,TOP+56,16,600,k[1],'center')}
+  rr(x,TOP,DC-8,HH-10,14,k[0]);tx(DAYS[d]+' '+wdate(d).getDate(),x+(DC-8)/2,TOP+28,20,700,k[1],'center');tx(l==='closed'?'ร้านหยุด':cov(d)+'/'+S.need[d]+' คน',x+(DC-8)/2,TOP+56,16,600,k[1],'center')}
  E.forEach((e,i)=>{const y=TOP+HH+i*RH;
   if(i%2===0)rr(P,y,W-P*2,RH-6,12,'#F7F8F6');
   tx(e.n,P+12,y+22,20,700,'#1D2A1F','left',NC-20);tx(fh(hrs(e))+' ชม.',P+12,y+46,14,400,'#737D74','left',NC-20);
   for(let d=0;d<7;d++){const x=P+NC+d*DC+4;
    if(CLOSED.includes(d)){rr(x,y+2,DC-8,RH-10,10,'#EDEFEB');continue}
-   if(e.s.includes(d)){const[a,b]=sh(e,d);rr(x,y+2,DC-8,RH-10,10,'#E3EFE6');rr(x,y+2,5,RH-10,2,'#2B5A3A');tx(ft(a)+'–'+ft(b),x+16,y+22,16,700,'#1D2A1F','left',DC-28);tx(fh(b-a)+' ชม.',x+16,y+42,13,400,'#737D74')}
+   if(offOn(e,d)){rr(x,y+2,DC-8,RH-10,10,'#FBE7EA');rr(x,y+2,5,RH-10,2,'#C8445A');tx('ไม่ว่าง',x+16,y+22,16,700,'#C8445A','left',DC-28);tx(offWhy(e,d)||'—',x+16,y+42,13,400,'#C8445A','left',DC-28)}
+   else if(e.s.includes(d)){const[a,b]=sh(e,d);rr(x,y+2,DC-8,RH-10,10,'#E3EFE6');rr(x,y+2,5,RH-10,2,'#2B5A3A');tx(ft(a)+'–'+ft(b),x+16,y+22,16,700,'#1D2A1F','left',DC-28);tx(fh(b-a)+' ชม.',x+16,y+42,13,400,'#737D74')}
    else rr(x,y+2,DC-8,RH-10,10,'#F4F5F2')}});
  const url=c.toDataURL('image/png');
  $('#sheet').innerHTML='<h2>ภาพตารางงาน</h2><p class="sub">กดบันทึกรูป หรือกดค้างที่รูปเพื่อบันทึก</p><img src="'+url+'" alt="ตารางงาน" style="width:100%;border-radius:12px;border:1px solid var(--line);margin-top:10px"><div class="act" style="margin-top:14px"><a class="btn" style="flex:1;text-align:center" download="aegean-schedule.png" href="'+url+'">บันทึกรูป</a><button class="btn ghost" data-a="close">ปิด</button></div>';
  $('#mask').classList.add('show')}
+let CS=null,PKR=null;
+function drawPick(){const y=PKR.y,cur=PF.mo;
+ $('#sheet').innerHTML=`<h2>เลือกเดือนและปี</h2><div class="ch" style="margin:14px 0 0;gap:4px"><button class="circ sm" data-py="-10" aria-label="ย้อน 10 ปี">«</button><button class="circ sm" data-py="-1" aria-label="ปีก่อน">‹</button><b style="flex:1;text-align:center;font-size:18px">${y+543}</b><button class="circ sm" data-py="1" aria-label="ปีถัดไป">›</button><button class="circ sm" data-py="10" aria-label="ไป 10 ปี">»</button></div><div class="pm">${MON.map((m,i)=>`<button class="${cur[0]===y&&cur[1]===i?'on':''}" data-pm="${i}">${m}</button>`).join('')}</div><div class="act" style="margin-top:16px"><button class="btn ghost" style="flex:1" data-ptoday="1">ไปเดือนนี้</button><button class="btn ghost" data-a="close">ปิด</button></div>`}
+function syncSub(m){const CY=cyc(),rec={av:[],off:[],at:Date.now(),cal:JSON.parse(JSON.stringify(PF.cal))};for(let i=0;i<7;i++){const dt=new Date(CY.ns.getFullYear(),CY.ns.getMonth(),CY.ns.getDate()+i),w=wdi(dt),c=PF.cal[dk(dt)];if(c&&c.st==='av')rec.av.push(w);else if(c&&c.st==='off')rec.off.push(w)}SUB[m]=rec;try{localStorage.setItem(SK,JSON.stringify(SUB))}catch(e){}if(DB)DB.collection('avail').doc(String(m)).set(rec).catch(()=>toast('ส่งไม่สำเร็จ ลองอีกครั้ง'))}
+function openCal(k){const c=PF.cal[k]||{};CS={k,mode:c.st==='off'?'off':'av',note:c.note||''};drawCal();$('#mask').classList.add('show')}
+function drawCal(){const c=CS,dt=pk(c.k);
+ $('#sheet').innerHTML=`<h2>${FULL[wdi(dt)]} ${dt.getDate()} ${MON[dt.getMonth()]} ${dt.getFullYear()+543}</h2><p class="sub">เลือกว่าง หรือ ไม่ว่าง</p><div class="md"><button class="g ${c.mode==='av'?'on':''}" data-cmode="av">ว่าง</button><button class="r ${c.mode==='off'?'on':''}" data-cmode="off">ไม่ว่าง</button></div>${c.mode==='off'?`<div class="sub" style="margin-top:14px">เหตุผล <span style="color:var(--red)">* จำเป็นต้องกรอก</span></div><textarea class="inp" id="cnote" rows="3" maxlength="100" style="width:100%;resize:vertical" placeholder="เช่น มีเรียน ติดธุระ ไม่สบาย" data-cnote="1" aria-label="เหตุผล">${cl(c.note)}</textarea>`:'<p class="hint" style="margin:14px 0 0">วันที่ว่างไม่ต้องระบุเหตุผล</p>'}<div class="act" style="margin-top:16px"><button class="btn" style="flex:1" data-csave="1">บันทึก</button>${PF.cal[c.k]?'<button class="btn ghost" data-cclr="1">ล้างค่า</button>':''}<button class="btn ghost" data-a="close">ปิด</button></div>`}
 function readPhoto(f,id){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas');c.width=c.height=96;const s=Math.min(im.width,im.height);c.getContext('2d').drawImage(im,(im.width-s)/2,(im.height-s)/2,s,s,0,0,96,96);emp(id).ph=c.toDataURL('image/jpeg',.8);const pv=$('#pv');if(pv)pv.innerHTML=avatar(emp(id),1);render()};im.src=r.result};r.readAsDataURL(f)}
 const tgl=(a,d)=>a.includes(d)?a.filter(x=>x!==d):[...a,d].sort((x,y)=>x-y);
 const OO=['del','del2','need','rate','fill','use'];
@@ -259,14 +328,26 @@ document.addEventListener('click',ev=>{
   if(D.go)return go(D.go);
   if(D.prof){const id=+D.prof;if(!can(id))return;return openProfile(id)}
   if(A==='exit'){preview=false;location.hash='';return}
-  if(D.pa!==undefined&&PF){const d=+D.pa;PF.av=tgl(PF.av,d);PF.off=PF.off.filter(x=>x!==d);return render()}
-  if(D.po!==undefined&&PF){const d=+D.po;PF.off=tgl(PF.off,d);PF.av=PF.av.filter(x=>x!==d);return render()}
-  if(D.psend&&PF){const m=me();if(m==null)return;const rec={av:PF.av,off:PF.off,at:Date.now()};SUB[m]=rec;try{localStorage.setItem(SK,JSON.stringify(SUB))}catch(e){}if(DB)DB.collection('avail').doc(String(m)).set(rec).catch(()=>toast('ส่งไม่สำเร็จ ลองอีกครั้ง'));render();return toast('ส่งข้อมูลเรียบร้อยแล้ว')}
+  if(D.wk!==undefined){WK=D.wk==='t'?todayWK():WK+Number(D.wk);edit=false;return render()}
+  if(D.avsel){AV=+D.avsel;return render()}
+  if(D.avgo){AV=+D.avgo;$('#mask').classList.remove('show');return go('avail')}
+  if(D.pick&&PF){PKR={y:PF.mo[0]};drawPick();return $('#mask').classList.add('show')}
+  if(D.py&&PKR){PKR.y=Math.max(1950,Math.min(2150,PKR.y+Number(D.py)));return drawPick()}
+  if(D.pm!==undefined&&PKR&&PF){PF.mo=[PKR.y,+D.pm];$('#mask').classList.remove('show');return render()}
+  if(D.ptoday&&PF){const t=new Date();PF.mo=[t.getFullYear(),t.getMonth()];$('#mask').classList.remove('show');return render()}
+  if(D.cm&&PF){const dt=new Date(PF.mo[0],PF.mo[1]+Number(D.cm),1),n=dt.getFullYear()*12+dt.getMonth();if(n<1950*12||n>2150*12)return;PF.mo=[dt.getFullYear(),dt.getMonth()];return render()}
+  if(D.cd&&PF)return openCal(D.cd);
+  if(D.cmode&&CS){CS.mode=D.cmode;return drawCal()}
+  if(D.csave&&CS&&PF){const nt=cl(CS.note).trim().slice(0,100);if(CS.mode==='off'&&!nt){const i=$('#cnote');if(i){i.style.borderColor='var(--red)';i.focus()}return toast('กรุณาระบุเหตุผลที่ไม่ว่าง')}PF.cal[CS.k]={st:CS.mode,t:null,note:CS.mode==='off'?nt:''};if(can(PF.me))syncSub(PF.me);$('#mask').classList.remove('show');return render()}
+  if(D.cclr&&CS&&PF){delete PF.cal[CS.k];if(can(PF.me))syncSub(PF.me);$('#mask').classList.remove('show');return render()}
+  if(D.psend&&PF){const m=PF.me;if(m==null||!can(m))return;if(!Object.keys(PF.cal).length)return toast('กรุณาเลือกวันอย่างน้อย 1 วัน');const nr=Object.keys(PF.cal).sort().find(k=>PF.cal[k].st==='off'&&!PF.cal[k].note);if(nr){openCal(nr);return toast('กรุณาระบุเหตุผลของ '+clab(nr))}syncSub(m);render();return toast(OWN()?'บันทึกวันว่างแล้ว':'ส่งข้อมูลเรียบร้อยแล้ว')}
   if(A==='back'){if(stack.length>1)stack.pop();edit=false;return render()}
   if(A==='home'){stack=[isStaff()?'me':'roster'];edit=false;return render()}
   if(A==='close'){$('#mask').classList.remove('show');return render()}
   if(A==='edit'){edit=!edit;return render()}
   if(A==='snap')return snap();
+  if(A==='status'&&OWN())return openStatus();
+  if(A==='goav'){if(cur()==='me'){const el=$('#availcard');if(el)el.scrollIntoView({behavior:'smooth'});return}return go('avail')}
   if(A==='addemp'){S.E.push({id:Math.max(-1,...S.E.map(e=>e.id))+1,n:'พนักงานใหม่',av:[0,1,3,4],s:[],t:{},tk:tok()});return render()}
   if(D.tg){const[e,d]=D.tg.split(':').map(Number);if(!can(e))return;return openTime(e,d)}
   if(D.tsave){const p=emp(TS.e);if(!p||!can(p.id))return;if(!p.s.includes(TS.d)){p.s.push(TS.d);p.s.sort((x,y)=>x-y);if(!p.av.includes(TS.d))toast(p.n+' ไม่ได้ลงวันว่างวันนี้ไว้')}p.t=p.t||{};p.t[TS.d]=[TS.st,TS.en];$('#mask').classList.remove('show');return render()}
@@ -278,7 +359,7 @@ document.addEventListener('click',ev=>{
   if(D.del){const p=emp(+D.del);if(!p)return;$('#sheet').innerHTML=`<h2>ลบ ${p.n}?</h2><p class="sub">กะและคำขอสลับกะของคนนี้จะถูกลบด้วย</p><div class="act" style="margin-top:16px"><button class="btn" style="flex:1" data-del2="${p.id}">ลบ</button><button class="btn ghost" style="flex:1" data-a="close">ยกเลิก</button></div>`;$('#mask').classList.add('show');return}
   if(D.del2){const id=+D.del2;S.E=S.E.filter(e=>e.id!==id);S.reqs=S.reqs.filter(r=>r.a!==id&&r.b!==id);$('#mask').classList.remove('show');return render()}
 });
-document.addEventListener('input',ev=>{const t=ev.target;if(t.dataset.ratein!==undefined&&OWN()){const v=Number(t.value);S.rate=Number.isFinite(v)?Math.max(0,Math.min(9999,Math.round(v))):0;queueSave();return}const K={tel:20,fn:60,addr:200};for(const k in K)if(t.dataset[k]!==undefined){const p=emp(+t.dataset[k]);if(p&&can(p.id))p[k]=cl(t.value).slice(0,K[k]);queueSave();return}if(t.dataset.name!==undefined){const p=emp(+t.dataset.name);if(p&&can(p.id))p.n=cn(t.value);queueSave()}});
+document.addEventListener('input',ev=>{const t=ev.target;if(t.dataset.cnote!==undefined&&CS){CS.note=cl(t.value).slice(0,100);return}if(t.dataset.ratein!==undefined&&OWN()){const v=Number(t.value);S.rate=Number.isFinite(v)?Math.max(0,Math.min(9999,Math.round(v))):0;queueSave();return}const K={tel:20,fn:60,addr:200};for(const k in K)if(t.dataset[k]!==undefined){const p=emp(+t.dataset[k]);if(p&&can(p.id))p[k]=cl(t.value).slice(0,K[k]);queueSave();return}if(t.dataset.name!==undefined){const p=emp(+t.dataset.name);if(p&&can(p.id))p.n=cn(t.value);queueSave()}});
 document.addEventListener('change',ev=>{const t=ev.target;if(t.dataset.ts&&TS){TS[t.dataset.ts]=Number(t.value);tsum();return}if(t.dataset.ratein!==undefined)return render();if(t.dataset.ph!==undefined&&t.files[0]&&can(+t.dataset.ph))readPhoto(t.files[0],+t.dataset.ph);if(t.dataset.name!==undefined){const p=emp(+t.dataset.name);if(p&&can(p.id)&&!p.n.trim())p.n='พนักงาน';render()}});
 addEventListener('hashchange',()=>{stack=[isStaff()?'me':'roster'];edit=false;PF=null;if(!isStaff())preview=false;render()});
 const got={},DBU={core:null,emp:{},rq:{}};
@@ -301,7 +382,7 @@ function rebuild(){
  DB.doc('app/core').onSnapshot(s=>{DBU.core=s.exists?dj(s):null;got.c=1;rebuild()},()=>{got.c=1;rebuild()});
  DB.collection('emp').onSnapshot(q=>{DBU.emp={};q.docs.forEach(d=>{const j=dj(d);if(j)DBU.emp[d.id]=j});got.e=1;rebuild()},()=>{got.e=1;rebuild()});
  DB.collection('rq').onSnapshot(q=>{DBU.rq={};q.docs.forEach(d=>{const j=dj(d);if(j)DBU.rq[d.id]=j});got.r=1;rebuild()},()=>{got.r=1;rebuild()});
- DB.collection('avail').onSnapshot(q=>{const o={};q.docs.forEach(d=>o[d.id]=d.data());SUB=saneSub(o);try{localStorage.setItem(SK,JSON.stringify(SUB))}catch(e){}softRender()},()=>{});
+ DB.collection('avail').onSnapshot(q=>{const o={};q.docs.forEach(d=>o[d.id]=d.data());const old=SUB;SUB=saneSub(o);if(AI&&OWN())S.E.forEach(e=>{const a=SUB[e.id],b=old[e.id];if(a&&(a.at||0)>((b&&b.at)||0)&&Object.keys(a.cal||{}).length)toast(e.n+' ลงวันว่างแล้ว')});AI=true;try{localStorage.setItem(SK,JSON.stringify(SUB))}catch(e){}softRender()},()=>{});
 }catch(e){rdy()}})();
 function queueSave(){clearTimeout(sv);if(!dirty())return;sv=setTimeout(commit,600)}
 function commit(){const p=pending();if(!p.w.length&&!p.x.length)return;
@@ -317,6 +398,7 @@ setInterval(tick,1000);
 $('#lg').addEventListener('click',()=>{const l=$('#lg');l.classList.add('fast');clearTimeout(l._);l._=setTimeout(()=>l.classList.remove('fast'),1400)});
 addEventListener('pagehide',commit);document.addEventListener('visibilitychange',()=>{if(document.hidden)commit()});
 setTimeout(()=>{if(!ready)rdy()},8000);render();tick();
+setTimeout(()=>{if(OWN()){const I=dlInfo(),n=S.E.filter(e=>!subDone(e.id)).length;if(n&&I.lv!=='ok')toast('ยังไม่ลงวันว่าง '+n+' คน · เดดไลน์ '+I.ds+' ('+I.txt+')')}},1500);
 </script>
 </body>
 </html>
